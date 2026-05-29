@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gujju Food Hub | Authentic Gujarati & Indian Street Food in Hobart</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Experience authentic Indian and Gujarati street food in Hobart. Taste premium Vada Pav, Kutchi Dabeli, rich Halal curries, and traditional delicacies at Moonah, TAS. Order online or book a table today!">
+  <meta name="keywords" content="Gujarati food Hobart, Indian restaurant Hobart, Moonah Indian food, Halal Indian Hobart, Vada Pav Hobart, Dabeli Hobart, Gujju Food Hub">
+  <meta name="author" content="Gujju Food Hub">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/vada_pav.png">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       CUSTOM CURSOR / POINTER
+       ========================================================================== -->
+  <div id="custom-cursor"><span id="cursor-emoji">🥟</span></div>
+  <div id="custom-cursor-dot"></div>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="header-nav" id="header-nav">
+    <div class="container nav-container">
+      <a href="#home" class="nav-brand">
+        <div class="nav-logo">
+          Gujju Food Hub
+          <span class="nav-logo-sub">Taste of India</span>
+        </div>
+      </a>
+      
+      <!-- Veg / Non-Veg Diet Switcher Toggle (Soluna Custom Switch) -->
+      <div class="diet-toggle-container">
+        <span class="toggle-label nonveg-label">NON-VEG</span>
+        <div class="soluna-container">
+          <label class="toggler" for="diet-theme-toggle">
+            <input type="checkbox" id="diet-theme-toggle" checked />
+            <div class="sky-container">
+              <div class="star-container">
+                <span class="star big-star"></span>
+                <span class="star big-star"></span>
+                <span class="star medium-star"></span>
+                <span class="star medium-star"></span>
+                <span class="star medium-star"></span>
+                <span class="star little-star"></span>
+                <span class="star little-star"></span>
+                <span class="star little-star"></span>
+                <span class="star little-star"></span>
+                <span class="star little-star"></span>
+                <span class="star little-star"></span>
+              </div>
+              <div class="cloud-container">
+                <div class="background-clouds">
+                  <span class="cloud"></span>
+                  <span class="cloud"></span>
+                  <span class="cloud"></span>
+                  <span class="cloud"></span>
+                  <span class="cloud"></span>
+                  <span class="cloud"></span>
+                </div>
+                <div class="front-clouds">
+                  <span class="cloud"></span>
+                  <span class="cloud"></span>
+                  <span class="cloud"></span>
+                  <span class="cloud"></span>
+                  <span class="cloud"></span>
+                  <span class="cloud"></span>
+                </div>
+              </div>
+            </div>
+            <div class="halo-container">
+              <span class="light-halo">
+                <span class="light-halo">
+                  <span class="light-halo inner"> </span>
+                </span>
+              </span>
+            </div>
+            <div class="toggle">
+              <div class="sun-container"></div>
+              <div class="moon-container">
+                <span class="moon-crater"></span>
+                <span class="moon-crater large"></span>
+                <span class="moon-crater"></span>
+              </div>
+            </div>
+          </label>
+        </div>
+        <span class="toggle-label veg-label">VEG</span>
+      </div>
+      
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#story" class="nav-link">Our Story</a></li>
+        <li><a href="#menu" class="nav-link">Menu</a></li>
+        <li><a href="#reviews" class="nav-link">Reviews</a></li>
+        <li><a href="#book" class="nav-link">Book a Table</a></li>
+        <li class="mobile-only-nav-item">
+          <a href="tel:+61435351442" class="nav-link contact-link-mobile">
+            <i class="fas fa-phone-alt"></i> +61 435 351 442
+          </a>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="tel:+61435351442" class="nav-link" style="margin-right:10px;">
+          <i class="fas fa-phone-alt"></i> +61 435 351 442
+        </a>
+        <button class="btn btn-primary btn-sm" onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})">
+          Order Online
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SCROLL-DRIVEN STACK SHOWCASE SECTION (Apple-Style)
+       ========================================================================== -->
+  <section class="hero-scroll-container" id="home">
+    <div class="hero-sticky-content">
+      
+      <!-- DYNAMIC PRODUCT-WISE BACKGROUND SLIDES -->
+      <div class="hero-bg-slides">
+        <div class="hero-bg-slide active" style="background-image: url('assets/bg_mumbai.png');"></div>
+        <div class="hero-bg-slide" style="background-image: url('assets/bg_gujarat.png');"></div>
+        <div class="hero-bg-slide" style="background-image: url('assets/bg_up.png');"></div>
+        <div class="hero-bg-slide" style="background-image: url('assets/bg_jaipur.png');"></div>
+        <div class="hero-bg-slide" style="background-image: url('assets/bg_delhi.png');"></div>
+      </div>
+
+      <!-- Container for columns -->
+      <div class="container hero-grid-wrapper">
+        
+        <!-- CENTER COLUMN: CENTRALIZED GIANT PRODUCT DISPLAY -->
+        <div class="hero-center-visual">
+          <div class="showcase-stack-container">
+            <div class="plate-glow-ring"></div>
+            <img class="stack-plate active" data-index="0" src="assets/vada_pav.png" alt="Classic Vada Pav">
+            <img class="stack-plate" data-index="1" src="assets/dabeli.png" alt="Kutchi Dabeli">
+            <img class="stack-plate" data-index="2" src="assets/aloo_tikki_chaat.png" alt="Aloo Tikki Chaat">
+            <img class="stack-plate" data-index="3" src="assets/veg_sandwich.png" alt="Veg Grilled Sandwich">
+            <img class="stack-plate" data-index="4" src="assets/samosa_chaat.png" alt="Samosa Chaat">
+          </div>
+        </div>
+        
+        <!-- BOTTOM CONTAINER (Unified for both indicators and text blocks) -->
+        <div class="hero-bottom-container">
+          <!-- LEFT COLUMN: SIDEBAR INDEX INDICATORS -->
+          <div class="hero-showcase-sidebar">
+            <div class="showcase-indicator active" data-index="0">01 <span>Vada Pav</span></div>
+            <div class="showcase-indicator" data-index="1">02 <span>Dabeli</span></div>
+            <div class="showcase-indicator" data-index="2">03 <span>Aloo Tikki</span></div>
+            <div class="showcase-indicator" data-index="3">04 <span>Sandwich</span></div>
+            <div class="showcase-indicator" data-index="4">05 <span>Samosa Chat</span></div>
+          </div>
+          
+          <!-- RIGHT COLUMN: ALIGNED DISH DETAILS LIST -->
+          <div class="hero-showcase-text-col">
+            
+            <!-- Item #1: Vada Pav -->
+            <div class="showcase-text-block active" id="text-block-0">
+              <div class="text-block-rank">01</div>
+              <div class="text-block-details">
+                <h3 class="text-block-title">Classic Vada Pav</h3>
+                <p class="text-block-origin"><i class="fas fa-map-marker-alt"></i> Origin: Mumbai (Gateway of India)</p>
+                <p class="text-block-desc">Mumbai's signature potato burger loaded with garlic and tamarind chutneys inside a soft bun.</p>
+              </div>
+            </div>
+
+            <!-- Item #2: Kutchi Dabeli -->
+            <div class="showcase-text-block" id="text-block-1">
+              <div class="text-block-rank">02</div>
+              <div class="text-block-details">
+                <h3 class="text-block-title">Kutchi Dabeli</h3>
+                <p class="text-block-origin"><i class="fas fa-map-marker-alt"></i> Origin: Gujarat (Statue of Unity & Kutch)</p>
+                <p class="text-block-desc">Sweet-spicy potato bun topped with sev, crunchy peanuts, and pomegranate seeds.</p>
+              </div>
+            </div>
+
+            <!-- Item #3: Aloo Tikki Chaat -->
+            <div class="showcase-text-block" id="text-block-2">
+              <div class="text-block-rank">03</div>
+              <div class="text-block-details">
+                <h3 class="text-block-title">Aloo Tikki Chaat</h3>
+                <p class="text-block-origin"><i class="fas fa-map-marker-alt"></i> Origin: Uttar Pradesh (Taj Mahal)</p>
+                <p class="text-block-desc">Crispy fried potato patties crushed and loaded with chickpea curry and sweet yogurt.</p>
+              </div>
+            </div>
+
+            <!-- Item #4: Veg Grilled Sandwich -->
+            <div class="showcase-text-block" id="text-block-3">
+              <div class="text-block-rank">04</div>
+              <div class="text-block-details">
+                <h3 class="text-block-title">Veg Grilled Sandwich</h3>
+                <p class="text-block-origin"><i class="fas fa-map-marker-alt"></i> Origin: Jaipur (Hawa Mahal)</p>
+                <p class="text-block-desc">Indian street style club toast layered with cucumber, tomato, beet, and cheese.</p>
+              </div>
+            </div>
+
+            <!-- Item #5: Samosa Chaat -->
+            <div class="showcase-text-block" id="text-block-4">
+              <div class="text-block-rank">05</div>
+              <div class="text-block-details">
+                <h3 class="text-block-title">Samosa Chaat</h3>
+                <p class="text-block-origin"><i class="fas fa-map-marker-alt"></i> Origin: Delhi (Red Fort)</p>
+                <p class="text-block-desc">Crushed golden samosas layered with sweet yogurt, fresh mint chutney, and sev.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SCROLL SNAP DOWN ARROW MOCK -->
+      <div class="hero-scroll-prompt">
+        <span>Scroll to Explore</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CULTURE & STORY SECTION
+       ========================================================================== -->
+  <section class="section" id="story">
+    <div class="spice-decor mint-leaf decoration-left-1" style="top: 10%; left: 2%;"></div>
+    <div class="spice-decor red-chili decoration-right-1" style="top: 40%; right: 3%;"></div>
+    <div class="spice-decor coriander-leaf decoration-left-2" style="top: 75%; left: 4%;"></div>
+    
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-content">
+          <span class="section-subtitle">Our Heritage</span>
+          <h2 class="section-title" style="margin-bottom: 24px; text-align: left;">From Festivals of Gujarat to Moonah</h2>
+          <p class="story-text">
+            Gujarati cuisine is world-renowned for its delicate balance of flavors—incorporating sweet, spicy, salty, and sour profiles in a single dish. At Gujju Food Hub, we bring this cultural culinary art directly to Hobart.
+          </p>
+          <p class="story-highlight">
+            "We aren't just selling food; we are sharing the rich traditions of Indian hospitality (Atithi Devo Bhava) and homemade spices that warm you up on a cool Tasmania evening."
+          </p>
+          <div class="story-features">
+            <div class="story-feature-item">
+              <div class="story-feature-icon"><i class="fas fa-leaf"></i></div>
+              <div>
+                <div class="story-feature-title">Pure Vegetarian Range</div>
+                <div class="story-feature-desc">Vibrant plant-based street food options that delight everyone.</div>
+              </div>
+            </div>
+            <div class="story-feature-item">
+              <div class="story-feature-icon"><i class="fas fa-certificate"></i></div>
+              <div>
+                <div class="story-feature-title">100% Halal Certified</div>
+                <div class="story-feature-desc">All dishes, including our popular curries, are completely Halal.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-visual-collage">
+          <div class="story-img-card" style="margin-top: 20px;">
+            <img src="assets/vada_pav.png" alt="Mumbai Vada Pav Bun">
+          </div>
+          <div class="story-img-card">
+            <img src="assets/dabeli.png" alt="Gujarati Kutchi Dabeli Burger">
+          </div>
+          <div class="story-badge-seal">
+            Taste<br>Of<br>Gujarat
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE DUAL-VIEW MENU SECTION (Parchment board style)
+       ========================================================================== -->
+  <section class="section" id="menu">
+    <!-- Floating Spice Decor Elements -->
+    <div class="spice-decor lime-slice decoration-right-2" style="top: 15%; right: 4%;"></div>
+    <div class="spice-decor red-chili decoration-left-3" style="top: 55%; left: 2%;"></div>
+    
+    <div class="container-fluid menu-fluid-container">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Gastronomic Dashboard</span>
+        <h2 class="section-title">Explore Our Spiced Menu</h2>
+      </div>
+
+      <!-- MAIN MENU BOARD TABS -->
+      <div class="menu-board-tabs">
+        <button class="menu-board-tab-btn active" id="tab-nasta-house">
+          <i class="fas fa-store"></i> Gujju Nasta House
+        </button>
+        <button class="menu-board-tab-btn" id="tab-main-menu">
+          <i class="fas fa-utensils"></i> Menu
+        </button>
+      </div>
+
+      <!-- VIEWPORT FOR DUAL MENU SYSTEM -->
+      <div class="menu-dashboard-container">
+        
+        <!-- ==========================================
+             LAYOUT 1: GUJJU NASTA HOUSE (Image 3 Board)
+             ========================================== -->
+        <div class="nasta-board-view active" id="nasta-board-view">
+          <div class="nasta-board-grid">
+            
+            <!-- PANEL 1: NASTA SPECIALS -->
+            <div class="nasta-panel card-panel">
+              <h3 class="panel-header header-red">Nasta Specials</h3>
+              <div class="panel-items-list" id="panel-nasta-specials">
+                <!-- Loaded Dynamically by JS -->
+              </div>
+            </div>
+
+            <!-- PANEL 2: CHAT CORNER -->
+            <div class="nasta-panel card-panel">
+              <h3 class="panel-header header-orange">Chat Corner</h3>
+              <div class="panel-items-list" id="panel-chat-corner">
+                <!-- Loaded Dynamically by JS -->
+              </div>
+            </div>
+
+            <!-- PANEL 3: SANDWICH HUB & FRIES & BITES (Stacked) -->
+            <div class="nasta-panel-stack">
+              <div class="nasta-panel card-panel">
+                <h3 class="panel-header header-green">Sandwich Hub</h3>
+                <div class="panel-items-list" id="panel-sandwich-hub">
+                  <!-- Loaded Dynamically by JS -->
+                </div>
+              </div>
+              
+              <div class="nasta-panel card-panel" style="margin-top: 20px;">
+                <h3 class="panel-header header-purple">Fries & Bites</h3>
+                <div class="panel-items-list" id="panel-fries-bites">
+                  <!-- Loaded Dynamically by JS -->
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+          <!-- PANEL 4: CHAI & SNACKS (Spanning Bottom) -->
+          <div class="nasta-panel card-panel nasta-bottom-panel">
+            <h3 class="panel-header header-brown">Chai & Snacks</h3>
+            <div class="nasta-bottom-wrapper">
+              <div class="nasta-decor-left">
+                <img src="assets/clay_tea_cup.png" alt="Steaming Chai" class="nasta-chai-img" loading="lazy">
+              </div>
+              <div class="panel-items-list-row" id="panel-chai-snacks">
+                <!-- Loaded Dynamically by JS -->
+              </div>
+              <div class="nasta-decor-right">
+                <img src="assets/heritage_bg.png" alt="Indian Heritage Building" class="nasta-heritage-img" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==========================================
+             LAYOUT 2: THE MAIN MENU (Image 4 Tabbed Sidebar)
+             ========================================== -->
+        <div class="main-menu-view" id="main-menu-view">
+          <div class="main-menu-layout">
+            
+            <!-- LEFT SIDEBAR CATEGORIES -->
+            <div class="main-menu-sidebar">
+              <ul class="sidebar-category-list" id="sidebar-category-list">
+                <!-- Loaded Dynamically by JS -->
+              </ul>
+              
+              <!-- Sidebar Vintage Illustration & Seal Wrapper -->
+              <div class="sidebar-footer-decor">
+                <img src="assets/indian_cooking_vintage.png" alt="Indian Traditional Cooking" class="sidebar-vintage-img" loading="lazy">
+                <!-- Traditional recipes seal at bottom of sidebar -->
+                <div class="sidebar-tradition-seal">
+                  <div class="seal-icon">🌾</div>
+                  <div class="seal-text">
+                    <span class="seal-title">Made with</span>
+                    <span class="seal-desc">Fresh Ingredients & Traditional Recipes</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CENTER MAIN CONTENT SECTION -->
+            <div class="main-menu-content-area">
+              <h3 class="content-category-title" id="content-category-title">Gujju Special Curries</h3>
+              <div class="content-items-list" id="content-items-list">
+                <!-- Loaded Dynamically by JS -->
+              </div>
+              
+              <!-- Category Cards Grid (Image 4 Bottom Section) -->
+              <div class="menu-categories-separator"></div>
+              <div class="menu-categories-grid" id="menu-categories-grid">
+                <!-- Loaded Dynamically by JS -->
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       TESTIMONIALS & REVIEWS SECTION
+       ========================================================================== -->
+  <section class="section" id="reviews">
+    <!-- Floating Spice Decor Elements -->
+    <div class="spice-decor mint-leaf decoration-left-4" style="top: 25%; left: 3%;"></div>
+    <div class="spice-decor coriander-leaf decoration-right-3" style="top: 65%; right: 4%;"></div>
+    
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Local Love</span>
+        <h2 class="section-title">What Hobart Diners Say</h2>
+      </div>
+
+      <div class="reviews-slider-wrap">
+        <button class="review-arrow review-arrow-prev" id="review-prev" aria-label="Previous Review">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        
+        <div class="reviews-slider">
+          <div class="reviews-track" id="reviews-track">
+            
+            <div class="review-slide">
+              <div class="review-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <p class="review-text">
+                "The Vada Pav and Kutchi Dabeli here are absolutely phenomenal! Best and most authentic street food in Hobart. It feels like stepping into a food lane in Ahmedabad. Highly recommend to everyone!"
+              </p>
+              <div class="review-user">
+                <div class="review-user-avatar">S</div>
+                <div>
+                  <div class="review-user-name">Sarah Jenkins</div>
+                  <div class="review-user-title">Local Hobart Foodie (Google Local Guide)</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="review-slide">
+              <div class="review-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <p class="review-text">
+                "Finding 100% Halal curries of this quality in Moonah was a blessing. The Butter Chicken is rich, creamy, and the garlic naan was fresh out of the oven. We will definitely be back next weekend!"
+              </p>
+              <div class="review-user">
+                <div class="review-user-avatar">A</div>
+                <div>
+                  <div class="review-user-name">Ali Rahman</div>
+                  <div class="review-user-title">Moonah Resident</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="review-slide">
+              <div class="review-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <p class="review-text">
+                "Amazing vegetarian options. The Samosa Chaat is packed with sweet yogurt and chutneys that hit every flavor note. Authentic taste, friendly staff, and very reasonable prices."
+              </p>
+              <div class="review-user">
+                <div class="review-user-avatar">P</div>
+                <div>
+                  <div class="review-user-name">Priya Patel</div>
+                  <div class="review-user-title">UTAS Student</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <button class="review-arrow review-arrow-next" id="review-next" aria-label="Next Review">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       RESERVATIONS & CONTACT SECTION
+       ========================================================================== */ -->
+  <section class="section" id="book">
+    <!-- Floating Spice Decor Elements -->
+    <div class="spice-decor red-chili decoration-right-4" style="top: 20%; right: 3%;"></div>
+    <div class="spice-decor lime-slice decoration-left-5" style="top: 75%; left: 3%;"></div>
+    
+    <div class="container">
+      <div class="reservation-grid">
+        <div class="reservation-info">
+          <span class="section-subtitle" style="text-align: left;">Visit Us</span>
+          <h3>Let's Book Your Table</h3>
+          <p style="margin-bottom: 30px;">
+            Whether you want a casual street food snack or a full Indian feast with family, we suggest reserving a table, especially on weekends when our Moonah space fills up quickly.
+          </p>
+          
+          <div class="reservation-details">
+            <div class="reservation-detail-item">
+              <div class="reservation-detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <div class="reservation-detail-label">Location</div>
+                <div class="reservation-detail-val">38 Bowen Road, Moonah, Hobart, TAS 7009</div>
+              </div>
+            </div>
+            <div class="reservation-detail-item">
+              <div class="reservation-detail-icon"><i class="fas fa-clock"></i></div>
+              <div>
+                <div class="reservation-detail-label">Hours</div>
+                <div class="reservation-detail-val">Monday – Sunday: 11:00 AM – 10:00 PM</div>
+              </div>
+            </div>
+            <div class="reservation-detail-item">
+              <div class="reservation-detail-icon"><i class="fas fa-phone-alt"></i></div>
+              <div>
+                <div class="reservation-detail-label">Contact</div>
+                <div class="reservation-detail-val">
+                  <a href="tel:+61435351442" style="color: var(--color-marigold);">+61 435 351 442</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reservation-socials">
+            <a href="https://www.facebook.com/" target="_blank" class="reservation-social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" class="reservation-social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.google.com/" target="_blank" class="reservation-social-btn" aria-label="Google"><i class="fab fa-google"></i></a>
+          </div>
+        </div>
+
+        <div class="reservation-card card">
+          <form id="reservation-form" class="reservation-form">
+            <div class="form-group">
+              <label class="form-label" for="reserve-name">Full Name</label>
+              <input class="form-input" type="text" id="reserve-name" required placeholder="Enter your name">
+            </div>
+            
+            <div class="form-group-row">
+              <div class="form-group">
+                <label class="form-label" for="reserve-phone">Phone Number</label>
+                <input class="form-input" type="tel" id="reserve-phone" required placeholder="04XX XXX XXX">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="reserve-guests">Number of Guests</label>
+                <select class="form-input" id="reserve-guests" required style="background-color: var(--bg-primary);">
+                  <option value="1">1 Person</option>
+                  <option value="2" selected>2 People</option>
+                  <option value="3">3 People</option>
+                  <option value="4">4 People</option>
+                  <option value="5">5 People</option>
+                  <option value="6">6+ People</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label class="form-label" for="reserve-date">Date</label>
+                <input class="form-input" type="date" id="reserve-date" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="reserve-time">Time</label>
+                <input class="form-input" type="time" id="reserve-time" required>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="margin-top: 10px;">
+              <i class="fas fa-check-circle" style="margin-right: 8px;"></i> Confirm Booking
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER SECTION & MAP
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="nav-logo" style="margin-bottom: 20px;">
+            Gujju Food Hub
+            <span class="nav-logo-sub" style="color: var(--text-secondary);">Taste of India</span>
+          </div>
+          <p class="footer-desc">
+            Bringing authentic Gujarati nashta and traditional Indian street flavors to the Hobart community. Fresh ingredients, handmade spice mixes, 100% Halal.
+          </p>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">
+            © 2026 Gujju Food Hub. All rights reserved.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.95rem; color: var(--text-secondary);">
+            <li><a href="#home"><i class="fas fa-chevron-right" style="font-size:0.75rem; color: var(--color-saffron); margin-right:8px;"></i> Home</a></li>
+            <li><a href="#story"><i class="fas fa-chevron-right" style="font-size:0.75rem; color: var(--color-saffron); margin-right:8px;"></i> Our Story</a></li>
+            <li><a href="#menu"><i class="fas fa-chevron-right" style="font-size:0.75rem; color: var(--color-saffron); margin-right:8px;"></i> Our Specialties</a></li>
+            <li><a href="#reviews"><i class="fas fa-chevron-right" style="font-size:0.75rem; color: var(--color-saffron); margin-right:8px;"></i> Customer Reviews</a></li>
+            <li><a href="#book"><i class="fas fa-chevron-right" style="font-size:0.75rem; color: var(--color-saffron); margin-right:8px;"></i> Dine-in Bookings</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Find Us in Moonah</h4>
+          <div class="footer-map-container">
+            <!-- Google Map Mockup with Premium Design -->
+            <div class="footer-map-placeholder">
+              <i class="fas fa-map-marked-alt"></i>
+              <div style="font-weight:600; font-size:0.9rem;">38 Bowen Road, Moonah TAS 7009</div>
+              <a href="https://maps.google.com/?q=38+Bowen+Road+Moonah+Tasmania" target="_blank" rel="noopener">
+                Open in Google Maps <i class="fas fa-external-link-alt" style="font-size: 0.75rem;"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        Designed with ❤️ representing Indian Culture | Pure vegetarian snacks, authentic sweets & savory dishes.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODALS & FLOATING CONTROLS
+       ========================================================================== -->
+  
+  <!-- Takeaway Cart Modal -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="modal-close" aria-label="Close Modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <div id="modal-body-content">
+        <!-- JS fills this dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Cart Trigger Button -->
+  <div class="floating-cart-btn" id="floating-cart" aria-label="View Order Summary">
+    <i class="fas fa-shopping-basket"></i>
+    <span class="floating-cart-badge" id="cart-badge">0</span>
+  </div>
+
+  <!-- DYNAMIC VEG/NON-VEG BACKGROUND LAYERS -->
+  <div class="dynamic-theme-bg" id="dynamic-theme-bg">
+    <!-- Veg Food Background Layer -->
+    <div class="veg-bg-layer"></div>
+    
+    <!-- Non-Veg Food Background Layer -->
+    <div class="nonveg-bg-layer"></div>
+  </div>
+
+  <!-- Custom JavaScript -->
+  <script src="index.js"></script>
+</body>
+</html>
