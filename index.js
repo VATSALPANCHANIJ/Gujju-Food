@@ -698,18 +698,17 @@ document.addEventListener("DOMContentLoaded", () => {
     mouseY = e.clientY;
   });
 
-  // Animate custom cursor trailing lag
+  // Animate custom cursor trailing lag using GPU-accelerated CSS Variables
   function animateCursor() {
-    const delay = 0.15;
+    const delay = 0.25; // Snappier damping catch-up
     cursorX += (mouseX - cursorX) * delay;
     cursorY += (mouseY - cursorY) * delay;
 
     if (customCursor && customCursorDot) {
-      customCursor.style.left = `${cursorX}px`;
-      customCursor.style.top = `${cursorY}px`;
-      
-      customCursorDot.style.left = `${mouseX}px`;
-      customCursorDot.style.top = `${mouseY}px`;
+      customCursor.style.setProperty('--cursor-x', `${cursorX}px`);
+      customCursor.style.setProperty('--cursor-y', `${cursorY}px`);
+      customCursorDot.style.setProperty('--dot-x', `${mouseX}px`);
+      customCursorDot.style.setProperty('--dot-y', `${mouseY}px`);
     }
     requestAnimationFrame(animateCursor);
   }
@@ -720,29 +719,37 @@ document.addEventListener("DOMContentLoaded", () => {
     return FOOD_EMOJIS[Math.floor(Math.random() * FOOD_EMOJIS.length)];
   }
 
-  // Click burst effect
+  // Click burst effect using CSS variable scaling
   document.addEventListener("click", () => {
     if (customCursor) {
-      customCursor.style.transform = "translate(-50%, -50%) scale(0.8)";
+      customCursor.style.setProperty("--cursor-scale", "0.8");
       if (cursorEmoji) cursorEmoji.textContent = "💥";
       setTimeout(() => {
-        customCursor.style.transform = "translate(-50%, -50%) scale(1)";
+        customCursor.style.removeProperty("--cursor-scale");
         if (cursorEmoji) cursorEmoji.textContent = getRandomFoodEmoji();
       }, 150);
     }
   });
 
-  function setupCursorHovers() {
-    const interactiveElements = document.querySelectorAll("a, button, select, input, textarea, .showcase-indicator, .menu-filter-btn, .menu-cat-btn, .menu-item-card, .stack-plate");
-    
-    interactiveElements.forEach(el => {
-      el.removeEventListener("mouseenter", handleMouseEnter);
-      el.removeEventListener("mouseleave", handleMouseLeave);
-      
-      el.addEventListener("mouseenter", handleMouseEnter);
-      el.addEventListener("mouseleave", handleMouseLeave);
-    });
-  }
+  // Optimize cursor hovers using Event Delegation to prevent DOM querying & listener rebinding
+  let currentHoverTarget = null;
+  document.body.addEventListener("mouseover", (e) => {
+    const interactive = e.target.closest("a, button, select, input, textarea, .showcase-indicator, .menu-filter-btn, .menu-cat-btn, .menu-item-card, .stack-plate");
+    if (interactive && interactive !== currentHoverTarget) {
+      currentHoverTarget = interactive;
+      handleMouseEnter({ currentTarget: interactive });
+    }
+  });
+
+  document.body.addEventListener("mouseout", (e) => {
+    if (currentHoverTarget && !e.relatedTarget?.closest("a, button, select, input, textarea, .showcase-indicator, .menu-filter-btn, .menu-cat-btn, .menu-item-card, .stack-plate")) {
+      currentHoverTarget = null;
+      handleMouseLeave();
+    }
+  });
+
+  // Empty placeholder since it's referenced in dynamic rendering cycles
+  function setupCursorHovers() {}
 
   function handleMouseEnter(e) {
     if (customCursor) customCursor.classList.add("hover");
@@ -1081,7 +1088,8 @@ document.addEventListener("DOMContentLoaded", () => {
         bypassScrollLock = true;
         isAnimatingScroll = true;
         
-        const targetScrollPos = targetSection.offsetTop - 80;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const targetScrollPos = Math.max(0, Math.min(targetSection.offsetTop - 80, maxScroll));
         
         window.scrollTo({
           top: targetScrollPos,

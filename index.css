@@ -210,7 +210,7 @@ button {
   border-radius: 50%;
   pointer-events: none;
   z-index: 99999;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate3d(var(--cursor-x, -100px), var(--cursor-y, -100px), 0) translate(-50%, -50%) scale(var(--cursor-scale, 1));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -220,7 +220,7 @@ button {
 }
 
 #custom-cursor.hover {
-  transform: translate(-50%, -50%) scale(1.4);
+  --cursor-scale: 1.4;
   background: rgba(212, 175, 55, 0.25);
   border-color: var(--color-gold);
   box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
@@ -236,12 +236,12 @@ button {
   border-radius: 50%;
   pointer-events: none;
   z-index: 100000;
-  transform: translate(-50%, -50%);
+  transform: translate3d(var(--dot-x, -100px), var(--dot-y, -100px), 0) translate(-50%, -50%) scale(var(--dot-scale, 1));
   transition: transform 0.1s ease-out;
 }
 
 #custom-cursor.hover + #custom-cursor-dot {
-  transform: translate(-50%, -50%) scale(0.5);
+  --dot-scale: 0.5;
 }
 
 @media (max-width: 1024px) {
@@ -934,6 +934,19 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
+}
+
+.nav-logo-img {
+  height: 46px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  transition: var(--transition-smooth);
+}
+
+.header-nav.scrolled .nav-logo-img {
+  height: 36px;
 }
 
 .nav-logo {
@@ -1009,9 +1022,14 @@ button {
   display: none;
   font-size: 1.5rem;
   color: var(--text-primary);
+  flex-shrink: 0;
 }
 
 @media (max-width: 991px) {
+  .nav-container {
+    padding: 0 16px;
+  }
+  
   .nav-menu {
     position: fixed;
     top: 96px;                     /* Sits just below the floating header bar */
@@ -2424,6 +2442,7 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
 }
 
 .toggle-label {
@@ -2605,7 +2624,7 @@ button {
 }
 
 .soluna-container .toggle {
-  clip-path: circle(0.5em at 0.75em 0.75em);
+  clip-path: circle(0.7em at 0.75em 0.75em);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -2615,7 +2634,7 @@ button {
 }
 
 .soluna-container .toggler input:checked ~ .toggle {
-  clip-path: circle(0.5em at 2.25em 0.75em);
+  clip-path: circle(0.7em at 2.25em 0.75em);
 }
 
 .soluna-container .sun-container,
@@ -2637,13 +2656,15 @@ button {
   position: absolute;
   left: 0.25em;
   bottom: 0.25em;
-  transition: var(--soluna-transition);
+  transition: var(--soluna-transition), opacity 0.3s ease;
   border: 1px solid rgba(231, 76, 60, 0.4);
   box-shadow: 0 0 12px rgba(231, 76, 60, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.15);
+  opacity: 1;
 }
 
 .soluna-container .toggler input:checked ~ .toggle .sun-container {
   transform: translate(var(--soluna-transform-x-offset));
+  opacity: 0;
 }
 
 /* Veg Moon represents crispy golden samosa (active when checked) */
@@ -2661,6 +2682,14 @@ button {
   border-radius: 50%;
   border: 1px solid rgba(46, 204, 113, 0.4);
   box-shadow: 0 0 12px rgba(46, 204, 113, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.15);
+  transition: var(--soluna-transition), opacity 0.3s ease;
+  transform: translate(calc(-1 * var(--soluna-transform-x-offset)));
+  opacity: 0;
+}
+
+.soluna-container .toggler input:checked ~ .toggle .moon-container {
+  transform: translate(0);
+  opacity: 1;
 }
 
 /* Hide moon craters since we are showing the food image */
@@ -2694,6 +2723,15 @@ button {
 }
 
 @media (max-width: 480px) {
+  .nav-container {
+    padding: 0 10px;
+  }
+  .nav-logo-img {
+    height: 38px;
+  }
+  .header-nav.scrolled .nav-logo-img {
+    height: 30px;
+  }
   .diet-toggle-container {
     margin-left: 8px;
     gap: 8px;
